@@ -3,7 +3,7 @@
 /* *** ACTION QUAND ON CLIQUE SUR UNE CASE *** */
 function jouerCase(){
 
-    let jouer=false;
+    let aJouer=false;
 
     //récupérer position du pion
     let positionPion=Array.from(this.id);
@@ -19,10 +19,10 @@ function jouerCase(){
          //appel à une fonction qui verifie que la position peut être jouée et qui retourne les pions
         //console.log("je dois retourner les pions");
         
-        jouer=verifiePositionJouer(positionPion); 
+        aJouer=verifiePositionJouer(positionPion); 
         //console.log(jouer);
 
-        if (jouer==true) {
+        if (aJouer==true) {
 
             //on affiche le pion
             //console.log('je peux jouer');
@@ -31,7 +31,6 @@ function jouerCase(){
             this.classList.add(joueur[indiceJoueur]);
             grilleOthello[positionPion[0]][positionPion[1]]=joueur[indiceJoueur];
 
-            
 
             // on change les joueurs
             if(joueur[indiceJoueur]=="noir"){
@@ -268,6 +267,7 @@ function retournePion(positionPionJoueur, positionPionAdversaire){
     let pionAdversaire="";
     let ligne,
         colonne;
+    let pionRetourne=0;
 
     let indiceAdversaire=(indiceJoueur+1)%2;
 
@@ -305,12 +305,19 @@ function retournePion(positionPionJoueur, positionPionAdversaire){
                 pionAdversaire.classList.remove(joueur[indiceAdversaire]);
                 pionAdversaire.classList.add(joueur[indiceJoueur]);
 
+                pionRetourne+=1;
             }
-            return true;
+
         }
 
     }
 
-    return false;
+    if (pionRetourne>0) {
+        return true
+    }
+    else { 
+        return false;
+    }
+    
 
 }

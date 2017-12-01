@@ -109,9 +109,6 @@ function supprimerElementEnfant(id){
 }
 
 
-
-
-
 /* *** Rendre les cases du plateau de jeu cliquable *** */
 function rendreCaseCliquableDocument(){
     for(let i=0;i<8;i++) {        
