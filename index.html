@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Jeu de l'Othello</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/othello.css">
+</head>
+<body>
+	<main>
+
+		<div class="container">
+			<div id="score">
+				<table>
+					<tbody>
+						<tr>
+							<td>
+								<div class="pion blanc">
+									<p id="scoreBlanc"></p>
+								</div>
+							</td>
+							<td>
+								<div>
+									<p id="messageText"></p>
+								</div>
+							</td>
+							<td>
+								<div class="pion noir">
+									<p id="scoreNoir"></p>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div id="plateauJeu"></div>
+
+			<div>
+				<button id="startJeu">Démarrer le jeu</button>
+				<button id="passerTour">Passer son tour</button>
+			</div>
+
+		</div>
+	
+	</main>
+
+	<script src="js/main.js"></script>
+	<script src="js/othelloInitialisation.js"></script>
+	<script src="js/othelloJeu.js"></script>
+	
+</body>
+</html>

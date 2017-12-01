@@ -1,0 +1,108 @@
+/* *** GENERAL *** */
+
+body *{
+   box-sizing: border-box;
+}
+
+main {
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    max-width: 960px;
+}
+
+.container{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+/* *** ENCART DES SCORES *** */
+
+div{
+    text-align: center;
+    vertical-align: middle;
+}
+
+#messageText{
+    width: 324px;
+    font-family: arial;
+    font-size: 1.1em;
+    color: white;
+}
+
+#scoreBlanc{
+    font-family: arial;
+    font-size: 2em;
+    color: black;
+    margin-top: 8px;
+    
+}
+
+#scoreNoir{
+    font-family: arial;
+    font-size: 2em;
+    color: white;
+    margin-top: 8px;
+}
+
+/* *** PLATEAU DE JEU *** */
+
+#score, #plateauJeu {
+    display: inline-block;
+    margin: 5px;
+}
+
+table {
+    display: table;
+    background-color: green;
+    border: 1px solid grey;
+}
+
+td {
+    width: 54px;
+    height: 54px;
+    border: 1px solid grey;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* *** APPARENCE DES PIONS *** */
+.pion {
+    border-radius: 54px;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+}
+
+.blanc{
+    border: 1px solid white;
+    background-color: white;
+   
+}
+
+.noir{
+    border: 1px solid black;
+    background-color: black;
+}
+
+.vide{
+    background-color: transparent;
+    border: none;
+}
+
+
+/* *** APPARENCE DES BOUTONS *** */
+button{
+    width: auto;
+    display: inline-block;
+    color: white;
+    background: grey;
+}
