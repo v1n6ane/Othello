@@ -2,11 +2,32 @@
 let indiceJoueur,
     joueur=["noir", "blanc"],
     celluleVide=0, 
-    grilleOthello = [];
+    grilleOthello = [],
+    partieEnCours=false;
 
 
 /* ### INITIALISER LE PLATEAU DE JEU ### */
+
+function verifPartieEnCours(){
+    //verifier qu'une partie n'est pas en cours
+    if (partieEnCours==true) {
+
+        //demander aux joueurs si'ils sont sur de vouloir recommencer une nouvelle partie
+        if(confirm("Une partie est en cours, êtes vous sur de vouloir recommencer ?")){
+            creerNouveauJeuOthello()
+        } else {
+            console.log("vous pouvez continuer la partie");
+        }
+
+    } else {
+        creerNouveauJeuOthello()
+    }
+
+}
+
+
 function creerNouveauJeuOthello(){
+
     //créer la grille sur le document
     creerGrilleDocument(); 
 
@@ -18,10 +39,12 @@ function creerNouveauJeuOthello(){
 
     //initier le premier joueur à noir
     indiceJoueur=0;
+    partieEnCours=true;
 
     document.getElementById('messageText').innerHTML = `${joueur[indiceJoueur].toUpperCase()} doit jouer pour démarrer la partie`;
 
     return indiceJoueur;
+
 }
 
 

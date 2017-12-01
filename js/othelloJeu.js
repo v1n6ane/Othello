@@ -58,18 +58,23 @@ function jouerCase(){
 /* *** PASSER LE TOUR D'UN JOUEUR *** */
 
 function passerTourJoueur(){
-    console.log(`${joueur[indiceJoueur]} passe son tour`);
 
-    // on change les joueurs
-    if(joueur[indiceJoueur]=="noir"){
-        indiceJoueur=1; //"blanc"
+    if(partieEnCours==true) {
 
-    } else {
-        indiceJoueur=0; //"noir"
+        console.log(`${joueur[indiceJoueur]} passe son tour`);
+
+        // on change les joueurs
+        if(joueur[indiceJoueur]=="noir"){
+            indiceJoueur=1; //"blanc"
+
+        } else {
+            indiceJoueur=0; //"noir"
+        }
+
+        //afficher un message pour dire à quel joueur de jouer
+        document.getElementById('messageText').innerHTML = `C'est au tour de ${joueur[indiceJoueur].toUpperCase()} de jouer`;
     }
 
-    //afficher un message pour dire à quel joueur de jouer
-    document.getElementById('messageText').innerHTML = `C'est au tour de ${joueur[indiceJoueur].toUpperCase()} de jouer`;
 }
 
 
@@ -116,6 +121,8 @@ function calculScore(){
         } else {
             document.getElementById('messageText').innerHTML = `Match nul`;
         }
+
+        partieEnCours=false;
     }
 
     return celluleVide;
